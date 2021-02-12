@@ -8,15 +8,7 @@ pkg_check_modules(PC_LIBUSB QUIET libusb-1.0)
 
 find_path(LIBUSB_INCLUDE_DIRS
     NAMES libusb.h
-    HINTS $ENV{LIBUSB_DIR}/include $ENV{LIBUSB_DIR}/include/libusb-1.0
-    ${PC_LIBUSB_INCLUDEDIR} ${PC_LIBUSB_INCLUDEDIR}/libusb-1.0
-    PATHS /usr/local/include/libusb-1.0 /usr/local/include
-    /usr/include/libusb-1.0 /usr/include
-    /opt/local/include/libusb-1.0
-
-    #non-conforming naming convention,
-    #backwards compatible with old script
-    ${LIBUSB_INCLUDE_DIR}
+    PATHS ${LIBUSB_HEADERS}
 )
 
 #standard library name for libusb-1.0
@@ -29,8 +21,7 @@ endif()
 
 find_library(LIBUSB_LIBRARIES
     NAMES ${libusb1_library_names}
-    HINTS $ENV{LIBUSB_DIR}/lib ${PC_LIBUSB_LIBDIR}
-    PATHS /usr/local/lib /usr/lib /opt/local/lib
+    PATHS ${LIBUSB_LIBRARIES}
 )
 
 enable_language(C) #needs C support for check below

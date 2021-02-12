@@ -149,7 +149,7 @@ if(NOT CMAKE_CXX_STANDARD)
 endif()
 
 # tell boost the linkage required
-set(Boost_USE_STATIC_LIBS ${ENABLE_STATIC_LIBS})
+# set(Boost_USE_STATIC_LIBS ${ENABLE_STATIC_LIBS})
 # temporarily explicitly enable or disable shared libraries,
 # build-wise; this can be disabled on a case by case basis for each
 # library built.
