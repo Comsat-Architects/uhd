@@ -497,7 +497,6 @@ endif(NOT CMAKE_MODULES_DIR)
 
 # UHDConfig.cmake needs UHD_LINK_LIST_STATIC set:
 list(APPEND UHD_LINK_LIST_STATIC "dl")
-list(APPEND UHD_LINK_LIST_STATIC "pthread")
 foreach(Boost_Comp ${UHD_BOOST_REQUIRED_COMPONENTS})
     if(NOT ${Boost_Comp} STREQUAL "unit_test_framework")
         list(APPEND UHD_LINK_LIST_STATIC "boost_${Boost_Comp}")
